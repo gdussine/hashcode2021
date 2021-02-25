@@ -11,6 +11,6 @@ public class Main {
         for (int i=0; i<simulationDuration; i++) {
             System.out.println("Coucou");
         }
-        Output out = new Output(args[1]);
+        Output out = new Output(args[1], null);
     }
 }
