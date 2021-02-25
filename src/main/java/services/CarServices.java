@@ -8,11 +8,17 @@ import java.util.List;
 import java.util.Queue;
 
 public class CarServices {
+    private static CarServices instance;
 
+    public static CarServices getInstance() {
+        if(instance==null)
+        instance=new CarServices();
+        return instance;
+    }
 
     List<Car> cars = new ArrayList<Car>();
 
-    public CarServices(){
+    private CarServices(){
 
     }
 
@@ -30,4 +36,10 @@ public class CarServices {
         cars.add(new Car(r));
     }
 
+    @Override
+    public String toString() {
+        return "CarServices{" +
+                "cars=" + cars +
+                '}';
+    }
 }

@@ -22,9 +22,9 @@ public class Input {
     public Input(String path) {
 
 
-        CrossServices crossServices = new CrossServices();
-        RoadServices roadServices = new RoadServices();
-        CarServices carServices = new CarServices();
+        CrossServices crossServices = CrossServices.getInstance();
+        RoadServices roadServices = RoadServices.getInstance();
+        CarServices carServices = CarServices.getInstance();
 
         try {
             File obj = new File(path);
@@ -47,10 +47,11 @@ public class Input {
                 Integer B = Integer.parseInt(arr[0]);//start
                 Cross crossB = crossServices.getOrCreate(B);
                 crossB.addRoadSrc(r);
+                r.setSrc(crossB);
                 Integer E = Integer.parseInt(arr[1]);//end
                 Cross crossE = crossServices.getOrCreate(E);
                 crossE.addRoadDst(r);
-
+                r.setDst(crossE);
                 Integer L = Integer.parseInt(arr[3]);//len
                 r.setLength(L);
             }
