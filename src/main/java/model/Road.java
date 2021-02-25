@@ -33,4 +33,27 @@ public class Road {
         return trafficLight;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setSrc(Cross src) {
+        this.src = src;
+    }
+
+    public void setDst(Cross dst) {
+        this.dst = dst;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setTrafficLight(TrafficLight trafficLight) {
+        this.trafficLight = trafficLight;
+    }
 }
