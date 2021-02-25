@@ -6,7 +6,7 @@ import java.util.Queue;
 
 public class Car {
 
-    private Queue<Road> roads = new LinkedList();
+    private Queue<Road> roads = new LinkedList<>();
 
     public Car(Queue<Road> roads) {
         this.roads = roads;
