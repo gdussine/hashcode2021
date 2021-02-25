@@ -5,13 +5,12 @@ import java.util.Queue;
 
 public class Road {
 
+    private int id;
     private Cross src;
     private Cross dst;
     private int length;
     private String name;
     private TrafficLight trafficLight;
-    private Queue<Car> carsQueue = new LinkedList<>();
-
 
 
     public String getName() {
@@ -34,7 +33,4 @@ public class Road {
         return trafficLight;
     }
 
-    public Queue<Car> getCarsQueue() {
-        return carsQueue;
-    }
 }
