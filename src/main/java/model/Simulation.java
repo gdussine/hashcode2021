@@ -21,6 +21,7 @@ public class Simulation {
 
     public ScheduleServices run(){
         ScheduleServices s= new ScheduleServices();
+        //System.out.println(s.getTrafficLightSchedules());
         for (int i=0; i< duree ; i++){
             s.process();
             CarServices.getInstance().forward();

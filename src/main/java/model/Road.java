@@ -60,4 +60,13 @@ public class Road {
     public void setTrafficLight(TrafficLight trafficLight) {
         this.trafficLight = trafficLight;
     }
+
+    @Override
+    public String toString() {
+        return "Road{" +
+                "id=" + id +
+                ", length=" + length +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

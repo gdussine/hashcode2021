@@ -42,4 +42,14 @@ public class TrafficLight {
     public void setCarsQueue(Queue<Car> carsQueue) {
         this.carsQueue = carsQueue;
     }
+
+    @Override
+    public String toString() {
+        return "TrafficLight{" +
+                "green=" + green +
+                ", street=" + street +
+                ", carsQueue=" + carsQueue +
+                ", duree=" + duree +
+                '}';
+    }
 }

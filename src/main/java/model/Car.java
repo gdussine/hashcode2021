@@ -20,19 +20,22 @@ public class Car {
     }
 
     public void forward(){
+
         if(time > 0){
             time--;
             return;
         }
         if(this.roads.peek().getTrafficLight().isRed()){
-            System.out.println("cc");
             this.roads.peek().getTrafficLight().getCarsQueue().add(this);
             return;
         }
-        if(!this.roads.peek().getTrafficLight().getCarsQueue().peek().equals(this)){
+        System.out.println(roads.peek().getTrafficLight().getCarsQueue());
+        if(this.roads.peek().getTrafficLight().getCarsQueue().size() >0 &&!this.roads.peek().getTrafficLight().getCarsQueue().peek().equals(this)){
             return;
         }
+        this.roads.peek().getTrafficLight().getCarsQueue().poll();
         roads.poll();
+
         this.time = this.roads.peek().getLength();
     }
 
