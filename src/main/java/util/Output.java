@@ -10,26 +10,16 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 public class Output {
-    public Output(String path, TrafficLightSchedule schedule) throws IOException {
+    public Output(String path, List<TrafficLightSchedule> schedules) throws IOException {
         PrintWriter writer = new PrintWriter(path, StandardCharsets.UTF_8);
-        List<TrafficLight> tls = schedule.getSchedule();
-        Set<Cross> crosses = new HashSet<>();
-        for (TrafficLight tl : tls) {
-            crosses.add(tl.getStreet().getSrc());
-        }
-        writer.println(crosses.size()); // number of intersections
-        for (Cross cross : crosses) {
-            writer.println(cross.getId()); // cross id
+        writer.println(schedules.size()); // number of intersections
+        for (TrafficLightSchedule schedule : schedules) {
+            writer.println(schedule.getCross().getId()); // cross id
             StringBuilder stb = new StringBuilder();
-            int inRoads = 0;
-            for (TrafficLight tl : tls) {
-                if (tl.getStreet().getSrc() == cross) {
-                    stb.append(tl.getStreet().getName()).append(" ").append(tl.getDuree()).append('\n');
-                    inRoads++;
-                }
+            writer.println(schedule.getSchedule().size()); // number of monitored traffic lights
+            for (TrafficLight tl : schedule.getSchedule()) {
+                writer.println(tl.getStreet().getName()+" "+tl.getDuree()); // a simple traffic light and its duration
             }
-            writer.println(inRoads); // number of roads in
-            writer.print(stb.toString()); // all traffic lights
         }
         writer.close();
     }

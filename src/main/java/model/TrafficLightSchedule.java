@@ -46,4 +46,8 @@ public class TrafficLightSchedule {
 
         }
     }
+
+    public Cross getCross() {
+        return cross;
+    }
 }
