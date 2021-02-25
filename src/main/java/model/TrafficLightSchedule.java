@@ -1,5 +1,7 @@
 package model;
 
+import services.CarServices;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -39,12 +41,24 @@ public class TrafficLightSchedule {
 
     public void process(){
         compteur++;
-        int index =compteur%total;
-        int inDuree=0;
-        while(index != index){
+        int totalModulee =compteur%total;
+        int index=0;
+        int incDuree=schedule.get(index).getDuree();
 
+        while(incDuree <= totalModulee){
+            index++;
+            incDuree+= schedule.get(index).getDuree();
 
         }
+        for( int  i=0 ; i<schedule.size() ; i++){
+            if( i!= index){
+                schedule.get(i).setGreen(false);
+            }
+            else{
+                schedule.get(i).setGreen(true);
+            }
+        }
+
     }
 
     public Cross getCross() {
