@@ -8,7 +8,7 @@ public class Cross {
 
     int id;
     List<Road> roadsSrc = new ArrayList<Road>();
-    List<Road> roadDst = new ArrayList<Road>();
+    List<Road> roadsDst = new ArrayList<Road>();
 
     public int getId() {
         return id;
@@ -22,11 +22,11 @@ public class Cross {
         roadsSrc.add(r);
     }
 
-    public void addRoadDst(Road r){
-        roadDst.add(r);
+    public void addRoadsDst(Road r){
+        roadsDst.add(r);
     }
-    public List<Road> getRoadDst() {
-        return roadDst;
+    public List<Road> getRoadsDst() {
+        return roadsDst;
     }
 
     public List<Road> getRoadsSrc() {

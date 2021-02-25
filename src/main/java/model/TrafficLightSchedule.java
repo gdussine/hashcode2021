@@ -31,7 +31,7 @@ public class TrafficLightSchedule {
     public TrafficLightSchedule(Cross cross) {
         this.cross = cross;
 
-        for (Road r : cross.getRoadsSrc()){
+        for (Road r : cross.getRoadsDst()){
             int currentDuree =1;
             schedule.add(r.getTrafficLight());
             this.total+=currentDuree;

@@ -50,7 +50,7 @@ public class Input {
                 r.setSrc(crossB);
                 Integer E = Integer.parseInt(arr[1]);//end
                 Cross crossE = crossServices.getOrCreate(E);
-                crossE.addRoadDst(r);
+                crossE.addRoadsDst(r);
                 r.setDst(crossE);
                 Integer L = Integer.parseInt(arr[3]);//len
                 r.setLength(L);

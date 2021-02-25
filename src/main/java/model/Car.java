@@ -61,4 +61,12 @@ public class Car {
         return time;
     }
 
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", roads=" + roads +
+                ", time=" + time +
+                '}';
+    }
 }
