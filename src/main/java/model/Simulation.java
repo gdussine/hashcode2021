@@ -1,5 +1,6 @@
 package model;
 
+import services.CarServices;
 import services.ScheduleServices;
 
 public class Simulation {
@@ -18,10 +19,12 @@ public class Simulation {
         this.duree = duree;
     }
 
-    public void run(){
+    public ScheduleServices run(){
         ScheduleServices s= new ScheduleServices();
         for (int i=0; i< duree ; i++){
-
+            s.process();
+            CarServices.getInstance().forward();
         }
+        return s;
     }
 }

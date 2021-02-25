@@ -16,4 +16,18 @@ public class ScheduleServices {
             tls.add(new TrafficLightSchedule(entry.getValue()));
         }
     }
+
+    public List<TrafficLight> getAll(){
+        ArrayList<TrafficLight> res = new ArrayList<TrafficLight>();
+        for( TrafficLightSchedule tfs : tls){
+            res.addAll(tfs.getSchedule());
+        }
+        return res;
+    }
+
+    public void process(){
+        for( TrafficLightSchedule tfs : tls){
+            tfs.process();
+        }
+    }
 }

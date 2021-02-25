@@ -14,6 +14,7 @@ public class Car {
 
     public Car(Queue<Road> roads) {
         this.roads = roads;
+        this.roads.peek().getTrafficLight().getCarsQueue().add(this);
         this.id = ++id;
         this.time = this.roads.peek().getLength();
     }
@@ -24,6 +25,8 @@ public class Car {
             return;
         }
         if(this.roads.peek().getTrafficLight().isRed()){
+            System.out.println("cc");
+            this.roads.peek().getTrafficLight().getCarsQueue().add(this);
             return;
         }
         if(!this.roads.peek().getTrafficLight().getCarsQueue().peek().equals(this)){

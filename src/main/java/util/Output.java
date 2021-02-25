@@ -10,9 +10,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 public class Output {
-    public Output(String path, TrafficLightSchedule schedule) throws IOException {
+    public Output(String path, List<TrafficLight> tls) throws IOException {
         PrintWriter writer = new PrintWriter(path, StandardCharsets.UTF_8);
-        List<TrafficLight> tls = schedule.getSchedule();
+
         Set<Cross> crosses = new HashSet<>();
         for (TrafficLight tl : tls) {
             crosses.add(tl.getStreet().getSrc());
