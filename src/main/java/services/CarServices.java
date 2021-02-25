@@ -24,7 +24,8 @@ public class CarServices {
 
 
     public void forward(){
-        for(Car car : cars){
+        for( int i=0; i< cars.size() ;i++){
+            Car car = cars. get(i);
             car.forward();
             if(car.getRoads().isEmpty()){
                 cars.remove(car);

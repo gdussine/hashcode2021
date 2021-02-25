@@ -4,6 +4,7 @@ import services.CarServices;
 import services.ScheduleServices;
 
 public class Simulation {
+    public static Boolean calcul = true;
     private Integer bonus, duree;
 
     public Integer getBonus() {

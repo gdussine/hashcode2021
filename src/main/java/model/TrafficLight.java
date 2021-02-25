@@ -4,12 +4,17 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class TrafficLight {
+    public Integer compteur=0;
 
     // 0 = red, 1 = green
     private boolean green = false;
     private Road street;
     private Queue<Car> carsQueue = new LinkedList<>();
     private Integer duree=1;
+
+    public void setDuree(Integer duree) {
+        this.duree = duree;
+    }
 
     public Integer getDuree() {
         return duree;

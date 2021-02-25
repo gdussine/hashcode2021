@@ -25,18 +25,26 @@ public class Car {
             time--;
             return;
         }
+        if(this.roads.peek()== null ){
+            return;
+        }
         if(this.roads.peek().getTrafficLight().isRed()){
             this.roads.peek().getTrafficLight().getCarsQueue().add(this);
             return;
         }
-        System.out.println(roads.peek().getTrafficLight().getCarsQueue());
+
         if(this.roads.peek().getTrafficLight().getCarsQueue().size() >0 &&!this.roads.peek().getTrafficLight().getCarsQueue().peek().equals(this)){
             return;
         }
+        this.roads.peek().getDst().compteur++;
+        this.roads.peek().getTrafficLight().compteur++;
         this.roads.peek().getTrafficLight().getCarsQueue().poll();
         roads.poll();
 
-        this.time = this.roads.peek().getLength();
+        if(this.roads.peek() != null){
+            this.time = this.roads.peek().getLength();
+        }
+
     }
 
     @Override

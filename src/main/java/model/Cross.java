@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Cross {
+    public int compteur=0;
 
     int id;
     List<Road> roadsSrc = new ArrayList<Road>();

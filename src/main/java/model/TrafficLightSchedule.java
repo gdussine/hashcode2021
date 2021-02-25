@@ -32,9 +32,17 @@ public class TrafficLightSchedule {
         this.cross = cross;
 
         for (Road r : cross.getRoadsDst()){
-            int currentDuree =1;
-            schedule.add(r.getTrafficLight());
-            this.total+=currentDuree;
+            if(Simulation.calcul){
+                int currentDuree =1;
+                schedule.add(r.getTrafficLight());
+                this.total+=currentDuree;
+            }
+            else{
+                int currentDuree = (int)Math.ceil((10.0*r.getTrafficLight().compteur)/cross.compteur);
+                schedule.add(r.getTrafficLight());
+                this.total+=currentDuree;
+                r.getTrafficLight().setDuree(currentDuree);
+            }
         }
 
     }
