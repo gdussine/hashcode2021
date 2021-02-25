@@ -13,7 +13,6 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Input {
-    private String path;
     private Simulation simulation;
 
     public Simulation getSimulation() {
@@ -21,7 +20,7 @@ public class Input {
     }
 
     public Input(String path) {
-        this.path = path;
+
 
         CrossServices crossServices = new CrossServices();
         RoadServices roadServices = new RoadServices();
