@@ -12,9 +12,9 @@ import java.util.*;
 public class Output {
     public Output(String path, TrafficLightSchedule schedule) throws IOException {
         PrintWriter writer = new PrintWriter(path, StandardCharsets.UTF_8);
-        Map<TrafficLight, Integer> tls = schedule.getSchedule();
+        List<TrafficLight> tls = schedule.getSchedule();
         Set<Cross> crosses = new HashSet<>();
-        for (TrafficLight tl : tls.keySet()) {
+        for (TrafficLight tl : tls) {
             crosses.add(tl.getStreet().getSrc());
         }
         writer.println(crosses.size()); // number of intersections
@@ -22,9 +22,9 @@ public class Output {
             writer.println(cross.getId()); // cross id
             StringBuilder stb = new StringBuilder();
             int inRoads = 0;
-            for (TrafficLight tl : tls.keySet()) {
+            for (TrafficLight tl : tls) {
                 if (tl.getStreet().getSrc() == cross) {
-                    stb.append(tl.getStreet().getName()).append(" ").append(tls.get(tl)).append('\n');
+                    stb.append(tl.getStreet().getName()).append(" ").append(tl.getDuree()).append('\n');
                     inRoads++;
                 }
             }
