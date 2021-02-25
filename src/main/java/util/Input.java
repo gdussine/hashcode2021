@@ -5,11 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Input {
-    private String path;
-
     public Input(String path) {
-        this.path = path;
-
         try {
             File obj = new File(path);
             Scanner scanner = new Scanner(obj);
