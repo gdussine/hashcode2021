@@ -1,12 +1,13 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cross {
 
     int id;
-    List<Road> roadsSrc;
-    List<Road> roadDst;
+    List<Road> roadsSrc = new ArrayList<Road>();
+    List<Road> roadDst = new ArrayList<Road>();
 
     public int getId() {
         return id;

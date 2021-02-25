@@ -26,4 +26,15 @@ public class TrafficLight {
         return !green;
     }
 
+    public void setGreen(boolean green) {
+        this.green = green;
+    }
+
+    public void setStreet(Road street) {
+        this.street = street;
+    }
+
+    public void setCarsQueue(Queue<Car> carsQueue) {
+        this.carsQueue = carsQueue;
+    }
 }

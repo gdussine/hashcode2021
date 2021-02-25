@@ -12,6 +12,10 @@ public class Road {
     private String name;
     private TrafficLight trafficLight;
 
+    public Road() {
+        trafficLight = new TrafficLight();
+        trafficLight.setStreet(this);
+    }
 
     public String getName() {
         return name;
