@@ -11,8 +11,8 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String pathIn = "input/c.txt";
-        String pathOut = "output/c.txt";
+        String pathIn = "input/f.txt";
+        String pathOut = "output/f.txt";
 
         Input in = new Input(pathIn);
         System.out.println(CrossServices.getInstance());
