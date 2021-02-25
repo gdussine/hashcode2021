@@ -33,6 +33,10 @@ public class CrossServices {
         return result;
     }
 
+    public HashMap<Integer, Cross> getCrossMap() {
+        return crossMap;
+    }
+
     @Override
     public String toString() {
         return "CrossServices{" +

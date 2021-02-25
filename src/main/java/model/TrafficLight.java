@@ -9,6 +9,11 @@ public class TrafficLight {
     private boolean green = false;
     private Road street;
     private Queue<Car> carsQueue = new LinkedList<>();
+    private Integer duree=1;
+
+    public Integer getDuree() {
+        return duree;
+    }
 
     public Road getStreet() {
         return street;
